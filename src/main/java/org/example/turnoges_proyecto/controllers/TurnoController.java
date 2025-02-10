@@ -1,8 +1,8 @@
-package org.dmg.turnoges.controllers;
+package org.example.turnoges_proyecto.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.dmg.turnoges.dtos.responses.TurnoResponseDTO;
-import org.dmg.turnoges.services.TurnoService;
+import org.example.turnoges_proyecto.dtos.responses.TurnoResponseDTO;
+import org.example.turnoges_proyecto.services.TurnoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

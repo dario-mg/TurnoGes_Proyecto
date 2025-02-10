@@ -1,7 +1,7 @@
-package org.dmg.turnoges.services;
+package org.example.turnoges_proyecto.services;
 
 
-import org.dmg.turnoges.dtos.responses.TicketResponseDTO;
+import org.example.turnoges_proyecto.dtos.responses.TicketResponseDTO;
 
 import java.util.List;
 

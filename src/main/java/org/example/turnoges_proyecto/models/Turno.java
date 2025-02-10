@@ -1,4 +1,4 @@
-package org.dmg.turnoges.models;
+package org.example.turnoges_proyecto.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -14,11 +14,11 @@ public class Turno {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "empleado_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "empleado_id")
     private User empleado;
 
     @ManyToOne
-    @JoinColumn(name = "mesa_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "mesa_id")
     private Mesa mesa;
 
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

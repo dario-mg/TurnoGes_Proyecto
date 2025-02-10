@@ -1,11 +1,12 @@
-package org.dmg.turnoges.services.Imp;
+package org.example.turnoges_proyecto.services.Imp;
 
 
 import lombok.RequiredArgsConstructor;
-import org.dmg.turnoges.dtos.responses.MesaResponseDTO;
-import org.dmg.turnoges.mappers.MesaMapper;
-import org.dmg.turnoges.repositories.MesaRepository;
-import org.dmg.turnoges.services.MesaService;
+import org.example.turnoges_proyecto.dtos.responses.MesaResponseDTO;
+import org.example.turnoges_proyecto.mappers.MesaMapper;
+import org.example.turnoges_proyecto.models.Mesa;
+import org.example.turnoges_proyecto.repositories.MesaRepository;
+import org.example.turnoges_proyecto.services.MesaService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,11 +21,15 @@ public class MesaServiceImpl implements MesaService {
 
     @Override
     public List<MesaResponseDTO> getAllMesas() {
-        return mesaRepository.findAll().stream().map(mesaMapper::toDTO).collect(Collectors.toList());
+        List<Mesa> mesas = mesaRepository.findAll();
+        return mesas.stream().map(
+                mesaMapper::toDTO
+        ).collect(Collectors.toList());
     }
 
     @Override
     public MesaResponseDTO getMesaById(Long id) {
-        return mesaRepository.findById(id).map(mesaMapper::toDTO).orElse(null);
+        Mesa mesa = mesaRepository.findById(id).orElse(null);
+        return mesaMapper.toDTO(mesa);
     }
 }

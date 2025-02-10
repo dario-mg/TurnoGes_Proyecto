@@ -1,6 +1,6 @@
-package org.dmg.turnoges.repositories;
+package org.example.turnoges_proyecto.repositories;
 
-import org.dmg.turnoges.models.Ticket;
+import org.example.turnoges_proyecto.models.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

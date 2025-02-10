@@ -1,4 +1,4 @@
-package org.example.api.config;
+package org.example.turnoges_proyecto.config;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

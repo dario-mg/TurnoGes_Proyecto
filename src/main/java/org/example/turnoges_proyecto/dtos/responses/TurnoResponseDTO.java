@@ -1,4 +1,4 @@
-package org.dmg.turnoges.dtos.responses;
+package org.example.turnoges_proyecto.dtos.responses;
 
 import lombok.Data;
 

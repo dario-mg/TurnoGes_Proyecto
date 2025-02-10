@@ -1,7 +1,8 @@
-package org.dmg.turnoges.services;
+package org.example.turnoges_proyecto.services;
 
 
-import org.dmg.turnoges.dtos.responses.MesaResponseDTO;
+
+import org.example.turnoges_proyecto.dtos.responses.MesaResponseDTO;
 
 import java.util.List;
 

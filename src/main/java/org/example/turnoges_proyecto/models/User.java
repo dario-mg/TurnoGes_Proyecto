@@ -1,4 +1,5 @@
-package org.dmg.turnoges.models;
+package org.example.turnoges_proyecto.models;
+
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,18 +16,18 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Usuario")
+@Table(name = "usuarios")
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre", nullable = false)
+    @Column(name = "username", nullable = false)
     private String username;
 
 
-    @Column(name = "contraseña", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -64,4 +65,5 @@ public class User implements UserDetails {
         empleado,
         cliente
     }
+
 }

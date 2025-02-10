@@ -1,10 +1,12 @@
-package org.dmg.turnoges.services.Imp;
+package org.example.turnoges_proyecto.services.Imp;
+
 
 import lombok.RequiredArgsConstructor;
-import org.dmg.turnoges.dtos.responses.TicketResponseDTO;
-import org.dmg.turnoges.mappers.TicketMapper;
-import org.dmg.turnoges.repositories.TicketRepository;
-import org.dmg.turnoges.services.TicketService;
+import org.example.turnoges_proyecto.dtos.responses.TicketResponseDTO;
+import org.example.turnoges_proyecto.mappers.TicketMapper;
+import org.example.turnoges_proyecto.models.Ticket;
+import org.example.turnoges_proyecto.repositories.TicketRepository;
+import org.example.turnoges_proyecto.services.TicketService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,11 +21,15 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public List<TicketResponseDTO> getAllTickets() {
-        return ticketRepository.findAll().stream().map(ticketMapper::toDTO).collect(Collectors.toList());
+        List<Ticket> tickets = ticketRepository.findAll();
+        return tickets.stream().map(
+                ticketMapper::toDTO
+        ).toList();
     }
 
     @Override
     public TicketResponseDTO getTicketById(Long id) {
-        return ticketRepository.findById(id).map(ticketMapper::toDTO).orElse(null);
+        Ticket ticket = ticketRepository.findById(id).orElse(null);
+        return ticketMapper.toDTO(ticket);
     }
 }

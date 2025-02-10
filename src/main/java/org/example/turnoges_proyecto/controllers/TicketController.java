@@ -1,9 +1,8 @@
-package org.dmg.turnoges.controllers;
-
+package org.example.turnoges_proyecto.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.dmg.turnoges.dtos.responses.TicketResponseDTO;
-import org.dmg.turnoges.services.TicketService;
+import org.example.turnoges_proyecto.dtos.responses.TicketResponseDTO;
+import org.example.turnoges_proyecto.services.TicketService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,12 +20,19 @@ public class TicketController {
 
     @GetMapping
     public ResponseEntity<List<TicketResponseDTO>> getAllTickets() {
-        return ResponseEntity.ok(ticketService.getAllTickets());
+        List<TicketResponseDTO> tickets = ticketService.getAllTickets();
+        if (tickets.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(tickets);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<TicketResponseDTO> getTicketById(@PathVariable Long id) {
         TicketResponseDTO ticket = ticketService.getTicketById(id);
-        return ticket != null ? ResponseEntity.ok(ticket) : ResponseEntity.notFound().build();
+        if (ticket == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(ticket);
     }
 }

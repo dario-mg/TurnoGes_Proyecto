@@ -1,6 +1,6 @@
-package org.dmg.turnoges.services;
+package org.example.turnoges_proyecto.services;
 
-import org.dmg.turnoges.dtos.responses.TurnoResponseDTO;
+import org.example.turnoges_proyecto.dtos.responses.TurnoResponseDTO;
 
 import java.util.List;
 

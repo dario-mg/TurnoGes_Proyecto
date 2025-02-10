@@ -1,4 +1,4 @@
-package org.dmg.turnoges.models;
+package org.example.turnoges_proyecto.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
